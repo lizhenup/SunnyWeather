@@ -14,6 +14,14 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        signingConfigs {
+            config {
+                storeFile file(KEY_PATH)
+                storePassword KEY_PASS
+                keyAlias ALIAS_NAME
+                keyPassword ALIAS_PASS
+            }
+        }
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,6 +30,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
