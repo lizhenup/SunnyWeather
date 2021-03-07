@@ -30,5 +30,5 @@ private val sky = mapOf(
 )
 
 fun getSky(skycon: String): Sky {
-    return sky[skycon] ?: sky["CLEAR_DAY"]!!
+    return sky[skycon] ?: sky["CLEAR_DAY"]!! //!!非空断言工具  ?: 左非空返回左 否则返回右
 }
